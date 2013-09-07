@@ -18,6 +18,14 @@
             "homepage": "http://www.spiffyjr.me/"
         }
     ],
+<<<<<<< HEAD
+=======
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    },
+>>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
     "require": {
         "php": ">=5.3.3",
         "zendframework/zend-authentication": "~2.1",

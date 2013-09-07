@@ -7,6 +7,10 @@ use Zend\Authentication\Result as AuthenticationResult;
 use Zend\ServiceManager\ServiceManagerAwareInterface;
 use Zend\ServiceManager\ServiceManager;
 use Zend\Crypt\Password\Bcrypt;
+<<<<<<< HEAD
+=======
+use Zend\Session\Container as SessionContainer;
+>>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
 use ZfcUser\Authentication\Adapter\AdapterChainEvent as AuthEvent;
 use ZfcUser\Mapper\User as UserMapperInterface;
 use ZfcUser\Options\AuthenticationOptionsInterface;
@@ -33,6 +37,19 @@ class Db extends AbstractAdapter implements ServiceManagerAwareInterface
      */
     protected $options;
 
+<<<<<<< HEAD
+=======
+    /**
+     * Called when user id logged out
+     * @param  AuthEvent $e event passed
+     */
+    public function logout(AuthEvent $e)
+    {
+        $session = new SessionContainer($this->getStorage()->getNameSpace());
+        $session->getManager()->destroy();
+    }
+    
+>>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
     public function authenticate(AuthEvent $e)
     {
         if ($this->isSatisfied()) {
@@ -89,6 +106,13 @@ class Db extends AbstractAdapter implements ServiceManagerAwareInterface
             return false;
         }
 
+<<<<<<< HEAD
+=======
+        // regen the id
+        $session = new SessionContainer($this->getStorage()->getNameSpace());
+        $session->getManager()->regenerateId();
+
+>>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
         // Success!
         $e->setIdentity($userObject->getId());
         // Update user's password hash if the cost parameter has changed

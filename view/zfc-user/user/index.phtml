@@ -1,4 +1,9 @@
 <div style="float:left; padding-right:16px;"><?php echo $this->gravatar($this->zfcUserIdentity()->getEmail()) ?></div>
+<<<<<<< HEAD
 <h3>Hello, <?php echo $this->zfcUserDisplayName() ?>!</h3>
 <a href="<?php echo $this->url('zfcuser/logout') ?>">[Sign Out]</a>
+=======
+<h3><?php echo $this->translate('Hello'); ?>, <?php echo $this->zfcUserDisplayName() ?>!</h3>
+<a href="<?php echo $this->url('zfcuser/logout') ?>">[<?php echo $this->translate('Sign Out'); ?>]</a>
+>>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
 <div style="clear:both;"></div>

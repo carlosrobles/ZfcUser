@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <h1>Register</h1>
+=======
+<h1><?php echo $this->translate('Register'); ?></h1>
+>>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
 
 <?php
 if (!$this->enableRegistration) {
@@ -15,14 +19,22 @@ $form->setAttribute('method', 'post');
     <dl class="zend_form">
     <?php foreach ($form as $element): ?>
         <?php if (!$element instanceof Zend\Form\Element\Button): ?>
+<<<<<<< HEAD
             <dt><?php //echo $this->formLabel($element) ?></dt>
+=======
+            <dt><?php echo $this->formLabel($element) ?></dt>
+>>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
         <?php endif ?>
         <?php if ($element instanceof Zend\Form\Element\Button): ?>
             <dd><?php echo $this->formButton($element) ?></dd>
         <?php elseif ($element instanceof Zend\Form\Element\Captcha): ?>
             <dd><?php echo $this->formCaptcha($element) . $this->formElementErrors($element) ?></dd>
         <?php else: ?>
+<<<<<<< HEAD
             <dd><?php echo $this->formRow($element) ?></dd>
+=======
+            <dd><?php echo $this->formInput($element) . $this->formElementErrors($element) ?></dd>
+>>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
         <?php endif ?>
     <?php endforeach ?>
     </dl>
