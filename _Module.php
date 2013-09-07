@@ -50,7 +50,11 @@ class Module implements
     }
 
     public function getViewHelperConfig()
+
+    { //TODO blogear sobre el potencia de los view helpers para hacer lo que yo llamaba modulos en cxi
+
     {
+
         return array(
             'factories' => array(
                 'zfcUserDisplayName' => function ($sm) {
@@ -72,15 +76,18 @@ class Module implements
                     $viewHelper->setLoginForm($locator->get('zfcuser_login_form'));
                     return $viewHelper;
                 },
+
                 
                 'zfcUserRegisterWidget' => function ($sm) {
                 	$locator = $sm->getServiceLocator();
                 	$viewHelper = new View\Helper\ZfcUserRegisterWidget;
                 	$viewHelper->setViewTemplate('zfc-user/user/register.phtml');
-                	$viewHelper->setLoginForm($locator->get('zfcuser_register_form'));
+                	$viewHelper->setRegForm($locator->get('zfcuser_register_form'));
                 	return $viewHelper;
                 },
                 
+
+
             ),
         );
 
@@ -148,7 +155,11 @@ class Module implements
 
                 'zfcuser_change_email_form' => function($sm) {
                     $options = $sm->get('zfcuser_module_options');
+
                     $form = new Form\ChangeEmail(null, $sm->get('zfcuser_module_options'));
+
+                    $form = new Form\ChangeEmail(null, $options);
+
                     $form->setInputFilter(new Form\ChangeEmailFilter(
                         $options,
                         new Validator\NoRecordExists(array(

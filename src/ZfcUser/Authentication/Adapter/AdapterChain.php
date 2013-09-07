@@ -8,10 +8,6 @@ use Zend\EventManager\Event;
 use Zend\Stdlib\RequestInterface as Request;
 use Zend\Stdlib\ResponseInterface as Response;
 use ZfcBase\EventManager\EventProvider;
-<<<<<<< HEAD
-=======
-use ZfcUser\Exception;
->>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
 
 class AdapterChain extends EventProvider implements AdapterInterface
 {
@@ -40,24 +36,10 @@ class AdapterChain extends EventProvider implements AdapterInterface
         return $result;
     }
 
-<<<<<<< HEAD
     public function prepareForAuthentication(Request $request)
     {
         $e = $this->getEvent()
                   ->setRequest($request);
-=======
-    /**
-     * prepareForAuthentication
-     *
-     * @param  Request $request
-     * @return Response|bool
-     * @throws Exception\AuthenticationEventException
-     */
-    public function prepareForAuthentication(Request $request)
-    {
-        $e = $this->getEvent();
-        $e->setRequest($request);
->>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
 
         $this->getEventManager()->trigger('authenticate.pre', $e);
 
@@ -68,20 +50,9 @@ class AdapterChain extends EventProvider implements AdapterInterface
         if ($result->stopped()) {
             if($result->last() instanceof Response) {
                 return $result->last();
-<<<<<<< HEAD
             } else {
                 // throw new Exception('Auth event was stopped without a response.');
             }
-=======
-            }
-
-            throw new Exception\AuthenticationEventException(
-                sprintf(
-                    'Auth event was stopped without a response. Got "%s" instead',
-                    is_object($result->last()) ? get_class($result->last()) : gettype($result->last())
-                )
-            );
->>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
         }
 
         if ($e->getIdentity()) {
@@ -143,18 +114,11 @@ class AdapterChain extends EventProvider implements AdapterInterface
      */
     public function setEvent(Event $e)
     {
-<<<<<<< HEAD
         if ($e instanceof Event && !$e instanceof AdapterChainEvent) {
             $eventParams = $e->getParams();
             $e = new AdapterChainEvent();
             $e->setParams($eventParams);
             unset($eventParams);
-=======
-        if (!$e instanceof AdapterChainEvent) {
-            $eventParams = $e->getParams();
-            $e = new AdapterChainEvent();
-            $e->setParams($eventParams);
->>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
         }
         $this->event = $e;
         return $this;

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <h1>Sign In</h1>
-=======
-<h1><?php echo $this->translate('Sign In'); ?></h1>
->>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
 
 <?php
 $form = $this->loginForm;
@@ -32,9 +28,5 @@ $form->setAttribute('method', 'post');
 <?php echo $this->form()->closeTag() ?>
 
 <?php if ($this->enableRegistration) : ?>
-<<<<<<< HEAD
 Not registered? <a href="<?php echo $this->url('zfcuser/register') . ($this->redirect ? '?redirect='.$this->redirect : '') ?>">Sign up!</a>
-=======
-<?php echo $this->translate('Not registered?'); ?> <a href="<?php echo $this->url('zfcuser/register') . ($this->redirect ? '?redirect='.$this->redirect : '') ?>"><?php echo $this->translate('Sign up!'); ?></a>
->>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
 <?php endif; ?>

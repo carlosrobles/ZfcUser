@@ -71,13 +71,6 @@ class UserController extends AbstractActionController
      */
     public function loginAction()
     {
-<<<<<<< HEAD
-=======
-        if ($this->zfcUserAuthentication()->getAuthService()->hasIdentity()) {
-            return $this->redirect()->toRoute($this->getOptions()->getLoginRedirectRoute());
-        }
-
->>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
         $request = $this->getRequest();
         $form    = $this->getLoginForm();
 
@@ -135,10 +128,6 @@ class UserController extends AbstractActionController
         if ($this->zfcUserAuthentication()->getAuthService()->hasIdentity()) {
             return $this->redirect()->toRoute($this->getOptions()->getLoginRedirectRoute());
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
         $adapter = $this->zfcUserAuthentication()->getAuthAdapter();
         $redirect = $this->params()->fromPost('redirect', $this->params()->fromQuery('redirect', false));
 
@@ -183,11 +172,7 @@ class UserController extends AbstractActionController
         $request = $this->getRequest();
         $service = $this->getUserService();
         $form = $this->getRegisterForm();
-<<<<<<< HEAD
  
-=======
-
->>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
         if ($this->getOptions()->getUseRedirectParameterIfPresent() && $request->getQuery()->get('redirect')) {
             $redirect = $request->getQuery()->get('redirect');
         } else {

@@ -21,11 +21,7 @@ class AdapterChainEvent extends Event
      * setIdentity
      *
      * @param mixed $identity
-<<<<<<< HEAD
      * @return AuthEvent
-=======
-     * @return AdapterChainEvent
->>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
      */
     public function setIdentity($identity = null)
     {
@@ -96,11 +92,7 @@ class AdapterChainEvent extends Event
      * setRequest
      *
      * @param Request $request
-<<<<<<< HEAD
      * @return AuthEvent
-=======
-     * @return AdapterChainEvent
->>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
      */
     public function setRequest(Request $request)
     {

@@ -51,10 +51,7 @@ class RegisterFilter extends ProvidesEventsInputFilter
         ));
 
         if ($this->getOptions()->getEnableDisplayName()) {
-<<<<<<< HEAD
  
-=======
->>>>>>> fbbe5fdeabd9229bf7d1328358c2d95538a6081e
             $this->add(array(
                 'name'       => 'display_name',
                 'required'   => true,
