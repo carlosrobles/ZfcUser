@@ -9,10 +9,10 @@ use Zend\View\Model\ViewModel;
 class ZfcUserRegisterWidget extends AbstractHelper
 {
     /**
-     * Login Form
-     * @var LoginForm
+     * Reg Form
+     * @var RegForm
      */
-    protected $loginForm;
+    protected $regForm;
 
     /**
      * $var string template used for view
@@ -42,7 +42,7 @@ class ZfcUserRegisterWidget extends AbstractHelper
         
         $vm = new ViewModel(array(
         	'enableRegistration' => true,//TODO $config['enable_registration'],
-            'registerForm' => $this->getLoginForm(),
+            'registerForm' => $this->getRegForm(),
             'redirect'  => $redirect,
         ));
         $vm->setTemplate($this->viewTemplate);
@@ -54,28 +54,28 @@ class ZfcUserRegisterWidget extends AbstractHelper
     }
 
     /**
-     * Retrieve Login Form Object
-     * @return LoginForm
+     * Retrieve Reg Form Object
+     * @return RegForm
      */
-    public function getLoginForm()
+    public function getRegForm()
     {
-        return $this->loginForm;
+        return $this->regForm;
     }
 
     /**
-     * Inject Login Form Object
-     * @param LoginForm $loginForm
-     * @return ZfcUserLoginWidget
+     * Inject Reg Form Object
+     * @param RegForm $regForm
+     * @return ZfcUserRegWidget
      */
-    public function setLoginForm(RegisterForm $loginForm)
+    public function setRegForm(RegisterForm $regForm)
     {
-        $this->loginForm = $loginForm;
+        $this->regForm = $regForm;
         return $this;
     }
 
     /**
      * @param string $viewTemplate
-     * @return ZfcUserLoginWidget
+     * @return ZfcUserRegWidget
      */
     public function setViewTemplate($viewTemplate)
     {
